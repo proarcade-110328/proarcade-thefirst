@@ -46,10 +46,10 @@ while True:
             break
         answers.append(answer)
     print(f"{answer} is your result.")
+    print(answers, " is your result history.")
     again = input("Do you want to do another calculation? (y/n)").lower()
     if again != "y":
         print("This ends the calculation program.")
         break
     else:
-        print(answers, " is your result history.")
         print("Starting a new calculation.\n")
