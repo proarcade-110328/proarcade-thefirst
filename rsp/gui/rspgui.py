@@ -5,12 +5,19 @@ def game(userchoice):
     cpuchoice = random.choice(cpu)
     if userchoice == cpuchoice:
         result_label.config(text= "TIE!")
+        computer_label.config(text= "Computer: " + cpuchoice)
     elif (userchoice == 'rock' and cpuchoice == 'scissors') or \
         (userchoice == 'paper' and cpuchoice == 'rock') or \
         (userchoice == 'scissors' and cpuchoice == 'paper'):
         result_label.config(text= "WIN!")
+        computer_label.config(text= "Computer: " + cpuchoice)
     else:
         result_label.config(text= "LOSE!")
+        computer_label.config(text= "Computer: " + cpuchoice)
+def retry():
+    cpuchoice = random.choice(cpu)
+    computer_label.config(text= "Computer: -")
+    result_label.config(text = "Result: -")
 # This starts the GUI Code.    
 import tkinter as tk
 window = tk.Tk()
@@ -26,4 +33,8 @@ scissorsbtn = tk.Button(window, text = "scissors", command = lambda: game('sciss
 scissorsbtn.pack()
 result_label = tk.Label(window, text = "Result: -", font=("Arial, 12"))
 result_label.pack()
+computer_label = tk.Label(window, text = "Computer: -", font=("Arial, 12"))
+computer_label.pack()
+retrybtn = tk.Button(window, text = "Retry", command = retry)
+retrybtn.pack()
 window.mainloop()
