@@ -12,22 +12,22 @@ def ninetynine():
             print("1 bottle of beer on the wall, 1 bottle of beer.")
             print("Take one down and pass it around, no more bottles of beer on the wall.\n")
             print("No bottles of beer on the wall, no more bottles of beer.")
-            print("Go to the store and buy some more, 99 bottles of beer on the wall.")
+            print("Go to the store and buy some more, 99 bottles of beer on the wall.\n")
 def adder():
     x = 0
     x = x + 1
 while True:
     answer = input("Enter a H9+ command. ").upper()
-    if answer == "H":
+    anslist = list(answer)
+    hcount = anslist.count('H')
+    ninecount = anslist.count('9')
+    pluscount = anslist.count('+')
+    for hnum in range(hcount):
         helloworld()
-    elif answer == "9":
+    for ninenum in range(ninecount):
         ninetynine()
-    elif answer == "+":
+    for plusnum in range(pluscount):
         adder()
-    else:
-        print("Invalid command.")
-        break
     again = input("Do you want to enter another?(y/n)").lower()
     if again != "y":
         print("This ends the H9+ interpreter.")
-        break
