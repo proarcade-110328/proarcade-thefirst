@@ -31,3 +31,4 @@ while True:
     again = input("Do you want to enter another?(y/n)").lower()
     if again != "y":
         print("This ends the H9+ interpreter.")
+        break
