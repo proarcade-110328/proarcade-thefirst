@@ -3,8 +3,11 @@ package main
 import "fmt"
 
 func main() {
+	fmt.Println("Enter any number.")
+	var input int
+	fmt.Scan(&input)
 	i := 1
-	for i <= 30 {
+	for i <= input {
 		if i%15 == 0 {
 			fmt.Println("FizzBuzz")
 		} else if i%5 == 0 {
