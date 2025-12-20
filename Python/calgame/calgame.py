@@ -36,10 +36,14 @@ while True:
     limit = ranges[gamedif]
     fnum = random.randrange(1, limit + 1)
     snum = random.randrange(1, limit + 1)
-    userans = float(input(f"{fnum} {calcdif} {snum} = "))
+    try:
+        userans = float(input(f"{fnum} {calcdif} {snum} = "))
+    except ValueError:
+        print("Unvalid answer, Please input again.")
+        continue
     answer = calc(fnum, snum, calcdif)
 
-    if userans == answer:
+    if abs(answer - userans) < 0.0001:
         end = time.perf_counter()
         print("You're correct!")
         totaltime = end - start
