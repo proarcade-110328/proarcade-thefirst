@@ -45,7 +45,6 @@ def records():
         content = f.read()
         print(content)
 
-
 while True:
     uiinput = input("Start, Records, End. ").lower()
     if uiinput == "start":
@@ -57,4 +56,3 @@ while True:
         break
     else:
         print("Invalid Input.")
-    
